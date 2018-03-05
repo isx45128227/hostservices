@@ -1,27 +1,26 @@
-# @edt ASIX M11 Curs 2017-2018
-# postgres:base 
-# servidor postgres
-# ----------------------------------
+# Dockerfile
+# Docker amb serveis de xarxa engegats
+# ---------------------------------------------------------
 
 FROM fedora:24
-MAINTAINER @isx45128227 "@edt ASIX M11 Curs 2017-2018"
-RUN mkdir /opt/docker/
+MAINTAINER @isx45128227 "Roger Ferran @edt Curs 2017-2018"
 
 RUN dnf -y update vi
-RUN dnf -y install vim procps iputils iproute tree nmap mlocate man-db \
-                   postgresql postgresql-server postgresql-libs rpcbind passwd findutils
+RUN dnf -y install vim iputils iproute procps mlocate man-db nmap tree \
+                   uw-imap sendmail tftp tftp-server vsftpd httpd telnet telnet-server openssh openssh-server openssh-clients \
+                   policycoreutils
+RUN mkdir /opt/docker/
+COPY ./ /opt/docker/
 
-COPY install.sh /opt/docker/
-COPY startup.sh /opt/docker/
+RUN chmod +x /opt/docker/startup.sh /opt/docker/sendmail.sh
 
-COPY pg_hba.conf /var/lib/pgsql/data/pg_hba.conf
-COPY postgresql.conf /var/lib/pgsql/data/postgresql.conf
+COPY data-files/index.html /var/www/html
+COPY data-files/index.html data-files/README.txt /var/ftp/pub/
+COPY data-files/index.html data-files/README.txt /var/lib/tftpboot/
+COPY xinetd-files/* /etc/xinetd.d/
 
-COPY training/* /opt/docker/ 
+RUN /usr/bin/ssh-keygen -A
 
-RUN chmod +x /opt/docker/install.sh /opt/docker/startup.sh
-WORKDIR /opt/docker
-
-CMD ["/usr/sbin/rpcbind "]
-CMD ["/opt/docker/install.sh"]
 CMD ["/opt/docker/startup.sh"]
+
+
