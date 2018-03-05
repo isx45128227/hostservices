@@ -1,4 +1,5 @@
 #!/bin/bash
+# @edt ASIX-M11 Curs 2017-2018
 # Starting sendmail daemon
 # -----------------------------------------------------------------------------
 #/usr/lib/systemd/system/sm-client.service
