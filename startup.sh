@@ -1,6 +1,6 @@
 #!/bin/bash
 # @edt ASIX-M11 Curs 2017-2018
-# Startup imatge hostbase:base
+# Startup hostservices:base
 # ---------------------------------------------------------
 /usr/sbin/xinetd  && echo "OK xinetd"
 /usr/sbin/httpd   && echo "OK httpd"
