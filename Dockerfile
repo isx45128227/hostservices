@@ -20,8 +20,8 @@ RUN chmod +x /opt/docker/startup.sh /opt/docker/sendmail.sh
 #COPY dades/index.html dades/README.txt /var/ftp/pub/
 ADD dades.tar.gz /opt/docker/
 
-RUN cp /opt/docker/README.txt /var/ftp/pub/
-RUN cp /opt/docker/index.html /var/www/html/
+RUN cp /opt/docker/prova/README.txt /var/ftp/pub/
+RUN cp /opt/docker/prova/index.html /var/www/html/
 
 COPY dades/index.html dades/README.txt /var/lib/tftpboot/
 COPY xinetd/* /etc/xinetd.d/
