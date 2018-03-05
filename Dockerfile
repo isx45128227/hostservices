@@ -1,4 +1,5 @@
-# Dockerfile
+# @edt ASIX M11 Curs 2017-2018
+# hostservices:base
 # Docker amb serveis de xarxa engegats
 # ---------------------------------------------------------
 
