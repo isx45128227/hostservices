@@ -23,7 +23,7 @@ ADD dades.tar.gz /opt/docker/
 RUN cp /opt/docker/prova/README.txt /var/ftp/pub/
 RUN cp /opt/docker/prova/index.html /var/www/html/
 
-COPY dades/index.html dades/README.txt /var/lib/tftpboot/
+COPY dades/index.html dades/README.md /var/lib/tftpboot/
 COPY xinetd/* /etc/xinetd.d/
 
 RUN /usr/bin/ssh-keygen -A
