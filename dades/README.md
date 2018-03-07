@@ -18,6 +18,7 @@ Activats serveis standalone i xinetd.
 * pop3s    (995, tcp) 
 * time     (37, tcp, udp)   
 
+* http-bis    (2222, tcp, redirect localhost:222)
 * echo-bis    (2007, tcp, redirect localhost:7)
 * daytime-bis (2013, tcp, redirect localhost:13)
    
