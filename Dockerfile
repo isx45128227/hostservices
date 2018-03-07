@@ -28,6 +28,8 @@ COPY xinetd/* /etc/xinetd.d/
 
 RUN /usr/bin/ssh-keygen -A
 
+EXPOSE 19 13 9 7 2080 143 993 110 995 37 2222 2007 2013 20 21 69 23 80 22
+
 CMD ["/opt/docker/startup.sh"]
 
 
