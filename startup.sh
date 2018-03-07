@@ -11,5 +11,3 @@
 # programa en foreground:
 /usr/sbin/in.telnetd -debug 23 && echo "OK telnet"
 ./sendmail.sh
-
-# Script sendmail es queda executant en primer pla
