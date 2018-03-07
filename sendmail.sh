@@ -11,7 +11,9 @@
 /etc/mail/make
 /etc/mail/make aliases
 /usr/sbin/sendmail -L sm-msp-queue -Ac -q1h $SENDMAIL_OPTARG
-/usr/sbin/sendmail  -q1h  $SENDMAIL_OPTARG
 
-# si es vol que no es quedi en foreground fer:
-#/usr/sbin/sendmail -bd -q1h  $SENDMAIL_OPTARG
+# Si volem que es quedi en background:
+/usr/sbin/sendmail -bd -q1h  $SENDMAIL_OPTARG
+
+# Si volem que es quedi en foreground:
+#/usr/sbin/sendmail -q1h  $SENDMAIL_OPTARG
